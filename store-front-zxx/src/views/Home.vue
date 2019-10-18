@@ -1,0 +1,18 @@
+<template>
+  <div class="home">
+    <el-button>el-button</el-button>
+    <HelloWorld msg="ZXX的店鋪" />
+  </div>
+</template>
+
+<script>
+// @ is an alias to /src
+import HelloWorld from "@/components/HelloWorld.vue";
+
+export default {
+  name: "home",
+  components: {
+    HelloWorld
+  }
+};
+</script>
