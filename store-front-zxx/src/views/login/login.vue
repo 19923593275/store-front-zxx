@@ -23,7 +23,7 @@
                                     <el-form-item label="验证码" prop="verCode">
                                         <el-row>
                                             <el-col :span="14">
-                                                <el-input v-model="loginForm.verCode" type="text" maxlength="4"></el-input>
+                                                <el-input v-model="loginForm.verCode" type="text" maxlength="4" placeholder="请输入验证码"></el-input>
                                             </el-col>
                                             <el-col :span="2">
                                                  &nbsp;
@@ -59,15 +59,15 @@
                                         </el-radio-group>
                                     </el-form-item>
                                     <el-form-item label="电话号码" prop="phone">
-                                        <el-input v-model="registForm.phone"></el-input>
+                                        <el-input v-model="registForm.phone" placeholder="请输入电话号码"></el-input>
                                     </el-form-item>
                                     <el-form-item label="邮箱" prop="email">
-                                        <el-input v-model="registForm.email"></el-input>
+                                        <el-input v-model="registForm.email" placeholder="请输入邮箱"></el-input>
                                     </el-form-item>
                                     <el-form-item label="验证码" prop="registVerCode">
                                         <el-row>
                                             <el-col :span="14">
-                                                <el-input v-model="registForm.registVerCode" type="text" maxlength="4"></el-input>
+                                                <el-input v-model="registForm.registVerCode" type="text" maxlength="4" placeholder="请输入验证码"></el-input>
                                             </el-col>
                                             <el-col :span="2">
                                                  &nbsp;
@@ -227,6 +227,9 @@
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         alert("submit");
+                        axios.get({
+                            url:'/login',
+                        })
                     } else {
                         console.log("error submit!!");
                         return false;
@@ -269,15 +272,15 @@
 
             .login-mian
                 padding-top 35px
-                width: 70%
+                width: 500px
                 margin 0 auto
 
             .send-vercode    
-                padding: 12px 17px
+                padding: 12px 30px
 
             .regist-mian
                 padding-top 35px
-                width: 70%
+                width: 500px
                 margin 0 auto
 
 </style>
