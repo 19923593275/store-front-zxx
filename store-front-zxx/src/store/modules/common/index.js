@@ -3,6 +3,14 @@ export default {
   state: {
     network: true
   },
-  mutations: {},
-  actions: {}
+  mutations: {
+    setNetWork(state, b) {
+      state.network = b;
+    }
+  },
+  actions: {
+    setNetWork({ commit }, b) {
+      commit("setNetWork", b);
+    }
+  }
 };
