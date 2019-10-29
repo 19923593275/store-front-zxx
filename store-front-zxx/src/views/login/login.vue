@@ -92,6 +92,7 @@
 </template>
 
 <script>
+import axiosl from 'axios';
     import rond from "@/utils/common"
     import { verifiPhone, verifiEmail } from "@/utils/rules"
 
@@ -224,12 +225,17 @@
                 this.$refs[formName].resetFields();
             },
             submitRegistForm(formName) {
+                console.log("Axios" +axiosl)
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        alert("submit");
-                        axios.get({
-                            url:'/login',
-                        })
+                        // axios.post('http://127.0.0.1:3000/userLogin',this.registForm);
+                        this.$api.user.userRegist(this.registForm)
+                            .then(res => {
+                                console.log(res);
+                            })
+                            .catch(error => {
+                                console.log("submitLoginForm error", error);
+                            })
                     } else {
                         console.log("error submit!!");
                         return false;
@@ -282,5 +288,4 @@
                 padding-top 35px
                 width: 500px
                 margin 0 auto
-
 </style>
