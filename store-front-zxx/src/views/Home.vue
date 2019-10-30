@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <el-button>el-button</el-button>
     <HelloWorld msg="ZXX的店鋪" />
   </div>
 </template>

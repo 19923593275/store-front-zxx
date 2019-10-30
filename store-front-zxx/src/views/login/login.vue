@@ -92,7 +92,6 @@
 </template>
 
 <script>
-import axiosl from 'axios';
     import rond from "@/utils/common"
     import { verifiPhone, verifiEmail } from "@/utils/rules"
 
@@ -225,7 +224,6 @@ import axiosl from 'axios';
                 this.$refs[formName].resetFields();
             },
             submitRegistForm(formName) {
-                console.log("Axios" +axiosl)
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
                         // axios.post('http://127.0.0.1:3000/userLogin',this.registForm);
